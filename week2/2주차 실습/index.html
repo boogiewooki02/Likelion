@@ -6,8 +6,10 @@
     <title>2주차 실습</title>
   </head>
   <body>
-    <div class="box">
+    <div class="container">
+      <h1>원하는 색을 찾으세요!</h1>
       <h1 id="count">0</h1>
+      <div id="bar"></div>
       <ul style="padding: 0">
         <button id="increase">Increase!</button>
         <button id="decrease">Decease!</button>
@@ -27,22 +29,48 @@
         num = parseInt(count.innerText);
         num++;
         count.innerText = num;
+        updateBar();
       });
       decrease.addEventListener("click", () => {
         num = parseInt(count.innerText);
         num--;
         count.innerText = num;
+        updateBar();
       });
       reset.addEventListener("click", () => {
         num = 0;
         count.innerText = num;
+        updateBar();
       });
+
+      function updateBar() {
+        const ratio = Math.min(num / 50, 1);
+        bar.style.width = ratio * 100 + "%";
+
+        const colors = [
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+          "navy",
+          "purple"
+        ];
+        const colorIndex = Math.floor(ratio * colors.length);
+        bar.style.backgroundColor = colors[colorIndex];
+      }
     </script>
     <style>
-      .box {
+      .container {
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+      #bar {
+        width: 100px;
+        height: 50px;
+        background-color: #ccc;
+        transition: 0.2s linear;
       }
       button {
         border-radius: 0.25rem;
