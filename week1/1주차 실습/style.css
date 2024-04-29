@@ -1,0 +1,45 @@
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.motto {
+  font-family: "궁서체";
+  color: transparent;
+}
+
+.motto:hover {
+  color: black;
+}
+
+.my_img {
+  border-radius: 30%;
+  width: 170px;
+  height: 170px;
+  margin-right: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+}
+
+.soccer {
+  width:200px;
+  height: auto;
+}
