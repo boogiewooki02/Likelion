@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2주차 과제</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="todo-container">
+        <h1 id="todo-title"><일정></h1>
+        <form>
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="추가할 일정을 입력하세요."
+            autofocus
+          />
+          <button id="todo-button" type="button" onclick="addTodo()">
+            <!--추가하기 버튼 클릭 시 addTodo 함수 실행-->
+            추가
+          </button>
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .todo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: antiquewhite;
+        padding: 0 5%;
+        border-radius: 10px;
+        height: 70vh;
+      }
+      #todo-title {
+        color: #505050;
+      }
+      #todo-input {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      #todo-button {
+        padding: 10px;
+        background-color: #ffd5a6;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #todo-list {
+        list-style: none;
+        padding: 0;
+      }
+      #todo-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      #todo-list button {
+        background-color: #ff6464;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      const todoInput = document.getElementById("todo-input");
+      const todoList = document.getElementById("todo-list");
+
+      // addTodo 함수 구현
+      function addTodo() {
+        const li = document.createElement("li"); // 추가되는 요소 하나 생성
+        // 체크 버튼
+        var checkButton = document.createElement("input");
+        checkButton.type = "checkbox";
+        checkButton.addEventListener("change", () => {
+          if (checkButton.checked) {
+            li.style.textDecoration = "line-through";
+          } else {
+            li.style.textDecoration = "";
+          }
+        });
+        li.appendChild(checkButton);
+
+        // 입력된 내용 추가
+        let input = todoInput.value;
+        if (input === "") {
+          alert("할 일을 입력하세요!!!!@&*&@");
+          return;
+        }
+        li.appendChild(document.createTextNode(input)); // 입력 내용 적용
+
+        // 삭제 버튼
+        var deleteButton = document.createElement("button");
+        deleteButton.innerText = "삭제";
+        deleteButton.onclick = function () {
+          todoList.removeChild(li);
+        };
+        li.appendChild(deleteButton);
+
+        todoList.appendChild(li); // 리스트에 요소 추가
+        todoInput.value = ""; // 입력란 비우기
+      }
+    </script>
+  </body>
+</html>
