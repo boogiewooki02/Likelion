@@ -1,0 +1,157 @@
+.header-bar {
+  max-width: 75rem;
+  height: 4rem;
+  padding: 0.75rem 1.25rem;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logo {
+  margin-right: 2.25rem;
+  background-color: transparent;
+  cursor: pointer;
+  width: 65;
+  height: 36;
+}
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 2.5rem 0 0;
+}
+.navigation-bar ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #212124;
+}
+.navigation-bar li {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1.85rem;
+  list-style: none;
+  line-height: 1.32;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #4d5159;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar input {
+  margin-right: 0.75rem;
+  display: block;
+  position: relative;
+  width: 19rem;
+  line-height: 1.36;
+  font-size: 1rem;
+  background-color: #f2f3f6;
+  height: 2.5rem;
+  padding: 0.5625rem 0.75rem;
+  border: none;
+  border-radius: 0.375rem;
+  color: #212124;
+}
+.chat-button {
+  display: block;
+  font-size: 1rem;
+  color: #212124;
+  font-weight: 700;
+  height: 2.5rem;
+  border: 1px solid #d1d3d8;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.875rem;
+  background-color: #fff;
+  cursor: pointer;
+  width: 6rem;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 1rem;
+}
+.search-button img {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+
+.header-banner {
+  background-color: #ffe2d2;
+  height: 19.6875rem;
+  color: #212124;
+}
+.banner-contents {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem 1rem 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.carrotcarrot {
+  display: block;
+}
+.carrotcarrot p {
+  line-height: 1.32;
+  font-size: 1.125rem;
+  letter-spacing: -1%;
+  display: block;
+  margin: 1rem 0 0;
+}
+.carrotcarrot button {
+  line-height: 1.4;
+  font-size: 0.875rem;
+  min-height: 2.125rem;
+  padding: .3125rem .625rem;
+  color: #fff;
+  background-color: #ff6f0f;
+  font-weight: 700;
+  border: 0;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+.banner-contents img {
+  position: absolute;
+  right: 0;
+  width: 37.6875rem;
+  object-fit: cover;
+  height: 267px;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation-bar {
+    display: none;
+  }
+  .chat-button {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .search-button {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .search-bar input {
+    display: none;
+  }
+}
